@@ -1,39 +1,121 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+Here's a README file template for your Flutter package:
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## normal_flutter_dialog
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package for displaying a simple dialog with customizable buttons.
 
-## Features
+## Installation
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Add `normal_flutter_dialog` as a dependency in your `pubspec.yaml` file:
 
-## Getting started
+```yaml
+dependencies:
+  normal_flutter_dialog: ^1.0.0
+```
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Import the package in your Dart code:
+
+```dart
+import 'package:normal_flutter_dialog/normal_flutter_dialog.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:flutter/material.dart';
+import 'package:normal_flutter_dialog/normal_flutter_dialog.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Normal Flutter Dialog Example'),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              DialogClass.showNormalAlertBox(
+                context: context,
+                alertBox: NormalFlutterDialog(
+                  title: 'Dialog Title',
+                  content: 'Dialog Content',
+                  closeButtonText: CustomButton.textButton(
+                    text: 'Close',
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                  actionButtonText: CustomButton.elevatedTextButton(
+                    text: 'Action',
+                    onPressed: () {
+                      // Add your action logic here
+                    },
+                  ),
+                ),
+              );
+            },
+            child: Text('Show Dialog'),
+          ),
+        ),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+## API Reference
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+### `DialogClass`
+
+#### `showNormalAlertBox`
+
+```dart
+static Future showNormalAlertBox({
+  required BuildContext context,
+  required NormalFlutterDialog alertBox,
+})
+```
+
+Displays a normal alert dialog box with customizable content.
+
+### `NormalFlutterDialog`
+
+A customizable alert dialog widget.
+
+| Parameter               | Description                              |
+|-------------------------|------------------------------------------|
+| `title`                 | Title of the dialog.                     |
+| `content`               | Content of the dialog.                   |
+| `closeButtonText`       | Button to close the dialog.              |
+| `actionButtonText`      | Button to perform an action.             |
+| `backgroundColor`       | Background color of the dialog.          |
+| `elevation`             | Elevation of the dialog.                 |
+| `shadowColor`           | Color of the dialog shadow.              |
+| `surfaceTintColor`      | Surface color of the dialog.             |
+| `insetAnimationDuration`| Duration of the inset animation.         |
+| `insetAnimationCurve`   | Curve of the inset animation.            |
+| `insetPadding`          | Padding of the dialog.                   |
+| `clipBehavior`          | Clip behavior of the dialog.             |
+| `shape`                 | Shape of the dialog.                     |
+| `alignment`             | Alignment of the dialog.                 |
+
+### `CustomButton`
+
+A customizable button widget.
+
+| Parameter     | Description                                  |
+|---------------|----------------------------------------------|
+| `type`        | Type of button (`text`, `elevated`, `outlined`). |
+| `text`        | Text displayed on the button.               |
+| `onPressed`   | Callback function for button press event.   |
+| `color`       | Color of the button.                        |
+| `style`       | Style of the button.                        |
+```
+
