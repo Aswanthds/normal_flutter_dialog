@@ -1,3 +1,3 @@
-## 0.0.1
-
-* TODO: Describe initial release.
+## [1.0.0] - 2024-04-04
+ 
+* A Normal Flutter Dialog box with custom buttons.
