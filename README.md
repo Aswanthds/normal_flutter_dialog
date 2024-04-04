@@ -7,24 +7,24 @@ A Flutter package for displaying a simple dialog with customizable buttons.
 
 ## Installation
 
-Add `normal_flutter_dialog` as a dependency in your `pubspec.yaml` file:
+Add `normal_flutter_dialog_box` as a dependency in your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  normal_flutter_dialog: ^1.0.0
+  normal_flutter_dialog_box: ^1.0.0
 ```
 
 Import the package in your Dart code:
 
 ```dart
-import 'package:normal_flutter_dialog/normal_flutter_dialog.dart';
+import 'package:normal_flutter_dialog_box/normal_flutter_dialog.dart';
 ```
 
 ## Usage
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:normal_flutter_dialog/normal_flutter_dialog.dart';
+import 'package:normal_flutter_dialog_box/normal_flutter_dialog.dart';
 
 void main() {
   runApp(MyApp());

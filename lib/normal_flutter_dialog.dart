@@ -1,4 +1,4 @@
-library normal_flutter_dialog;
+library normal_flutter_dialog_box;
 
 import 'package:flutter/material.dart';
 
